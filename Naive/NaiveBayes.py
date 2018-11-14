@@ -2,6 +2,7 @@
 import csv
 import random
 import math
+import os
 
 
 def loadCsv(filename):
@@ -99,7 +100,7 @@ def getAccuracy(testSet, predictions):
 
 
 def main():
-    filename = 'pima-indians-diabetes.data.csv'
+    filename = 'breastCancerData.csv'
     splitRatio = 0.67
     dataset = loadCsv(filename)
     trainingSet, testSet = splitDataset(dataset, splitRatio)
