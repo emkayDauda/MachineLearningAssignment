@@ -6,7 +6,7 @@ import os
 
 
 def loadCsv(filename):
-    lines = csv.reader(open(filename, "rb"))
+    lines = csv.reader(open(filename, "rt"))
     dataset = list(lines)
     for i in range(len(dataset)):
         dataset[i] = [float(x) for x in dataset[i]]
@@ -100,6 +100,8 @@ def getAccuracy(testSet, predictions):
 
 
 def main():
+    # filenames = os.listdir('/home/ask_emkay/PycharmProjects/MachineLearning/DataSets')
+    # print(filenames)
     filename = 'breastCancerData.csv'
     splitRatio = 0.67
     dataset = loadCsv(filename)
