@@ -42,7 +42,7 @@ def split_data():
         # print(len(train_attributes))
         print("\t\t\t\tFOLD %d\n" % (i + 1))
         accuracies.append(float(predict(train_attributes, train_classes, test_attributes, test_classes)))
-    print('Standard Deviation is %d' % (statistics.pstdev(accuracies)))
+    print('Standard Deviation is %.2f' % (statistics.pstdev(accuracies)))
     # print(fold_size)
 
 
@@ -59,7 +59,7 @@ def predict(train_attributes, train_classes, test_attributes, test_classes):
 
     #
     inaccuracy = (correctly_predicted / float(data_size)) * 100.
-    print("Accuracy is: %d" % (100 - inaccuracy))
+    print("Accuracy is: %.2f" % (100 - inaccuracy))
     print('\n')
 
     return 100 - inaccuracy
