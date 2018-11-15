@@ -15,7 +15,7 @@ def load_data():
 
     imp_mean = SimpleImputer(missing_values='?', strategy='most_frequent')
     data = imp_mean.fit_transform(data)
-    data = pd.DataFrame(data=data, index=range(699), columns=names)
+    data = pd.DataFrame(data=data, index=range(len(data)), columns=names)
     return data
 
 
