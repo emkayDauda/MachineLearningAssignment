@@ -41,7 +41,7 @@ def begin_prediction(dataframe):
     max_features = 3
     kfold = model_selection.KFold(n_splits=10, random_state=seed)
     model = RandomForestClassifier(n_estimators=num_trees, max_features=max_features)
-    results = model_selection.cross_val_score(model, enc.fit_transform(X), Y, cv=kfold)
+    results = model_selection.cross_val_score(model, encoder.fit_transform(X), Y, cv=kfold)
     for i in range(len(results)):
         print('Accuracy for fold %d is: %.2f%%' % ((i + 1), results[i] * 100))
 
