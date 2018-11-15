@@ -1,8 +1,10 @@
 import pandas as pd
 import re
+
 import pandas
 from sklearn import preprocessing
 from sklearn import model_selection
+
 from sklearn.ensemble import RandomForestClassifier
 
 
@@ -39,7 +41,7 @@ def begin_prediction(dataframe):
     seed = 7
     num_trees = 100
     max_features = 3
-    kfold = model_selection.KFold(n_splits=10, random_state=seed)
+    kfold = model_selection.RepeatedKFold(n_splits=5, random_state=seed, n_repeats=10)
     model = RandomForestClassifier(n_estimators=num_trees, max_features=max_features)
     results = model_selection.cross_val_score(model, encoder.fit_transform(X), Y, cv=kfold)
     for i in range(len(results)):
