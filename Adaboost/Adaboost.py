@@ -8,7 +8,7 @@ from sklearn.ensemble import AdaBoostClassifier
 
 def load_data():
     names = ['Sequence-name', 'mcg', 'gvh', 'lip', 'chg', 'aac', 'alm1', 'alm2', 'Class']
-    data = pd.read_csv('Ecoli.data.csv', names=names)
+    data = pd.read_csv('Car.data.csv', names=names)
     # print(data[:15])
 
     return data
