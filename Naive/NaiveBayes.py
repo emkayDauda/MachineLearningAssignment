@@ -3,7 +3,8 @@ import csv
 import random
 import math
 from sklearn.naive_bayes import GaussianNB
-from sklearn import datasets
+from sklearn import preprocessing
+from sklearn import model_selection
 import pandas as pd
 import numpy as np
 import statistics
@@ -37,6 +38,7 @@ def split_data():
                                     :(int((num_folds - i) * fold_size))]
         print("\t\t\t\tFOLD %d\n" % (i + 1))
         accuracies.append(float(predict(train_attributes, train_classes, test_attributes, test_classes)))
+    print('Mean is: %.2f' % (statistics.mean(accuracies)))
     print('Standard Deviation is %.2f' % (statistics.pstdev(accuracies)))
 
 
