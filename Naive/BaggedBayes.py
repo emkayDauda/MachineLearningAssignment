@@ -12,11 +12,11 @@ def main():
 
 def split_data():
     data = load_data()
-    # bagged_data = data.sample(n=data.shape[0], replace=True)
-    classes = data.iloc[:, 0]
-    attributes = data.iloc[:, 1:]
+    bagged_data = data.sample(n=data.shape[0], replace=True)
+    classes = bagged_data.iloc[:, 0]
+    attributes = bagged_data.iloc[:, 1:]
     # print(attributes[:15])
-    number_of_instances = len(data)
+    number_of_instances = len(bagged_data)
     num_folds = 5
     fold_size = number_of_instances / num_folds
     accuracies = []
