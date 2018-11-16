@@ -26,7 +26,7 @@ def load_data():
 def begin_prediction(dataframe):
     encoder = preprocessing.OneHotEncoder()
 
-    X = dataframe.iloc[:, 0:22]
+    X = dataframe.iloc[:, :22]
     Y = dataframe.iloc[:, 22]
     seed = 3
     num_trees = 100
