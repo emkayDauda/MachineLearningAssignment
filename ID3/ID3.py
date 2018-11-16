@@ -32,7 +32,7 @@ def begin_prediction(dataframe):
     num_trees = 100
     max_features = 3
     kfold = model_selection.RepeatedKFold(n_splits=5, random_state=seed, n_repeats=10)
-    model = tree.DecisionTreeClassifier()
+    model = tree.DecisionTreeClassifier(criterion='entropy')
     results = model_selection.cross_val_score(model, encoder.fit_transform(X), Y, cv=kfold)
     for i in range(len(results)):
         print('Accuracy for fold %d is: %.2f%%' % ((i + 1), results[i] * 100))
