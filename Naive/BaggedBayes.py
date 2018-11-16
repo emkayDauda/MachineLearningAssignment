@@ -35,7 +35,7 @@ def split_data():
         print("\t\t\t\tFOLD %d\n" % (i + 1))
         accuracies.append(float(predict(train_attributes, train_classes, test_attributes, test_classes)))
 
-    print('Mean is: %.2f' % (statistics.mean(accuracies)))
+    print('Mean is: %.2f%%' % (statistics.mean(accuracies)))
     print('Standard Deviation is %f' % (statistics.pstdev(accuracies)))
 
 
