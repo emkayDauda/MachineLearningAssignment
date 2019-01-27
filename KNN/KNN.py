@@ -22,7 +22,7 @@ def load_data():
 def split_data():
     data = load_data()
     classes = data.iloc[:, 10]
-    attributes = data.iloc[:, :10]
+    attributes = data.iloc[:, 1:10]
     attributes = attributes.astype('int')
     classes = classes.astype('int')
     number_of_instances = len(data)
